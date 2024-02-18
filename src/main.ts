@@ -9,7 +9,9 @@
 // import './topics/09.classes'
 // import './topics/10.constructor'
 // import './topics/11.extend-classes'
-import './topics/12.composition-over-inheritance'
+// import './topics/12.composition-over-inheritance'
+// import './topics/13.generics'
+import './topics/14.decorators'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   Hola Mundo
