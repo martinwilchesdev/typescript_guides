@@ -11,7 +11,6 @@
 // import './topics/11.extend-classes'
 // import './topics/12.composition-over-inheritance'
 // import './topics/13.generics'
-// import './topics/14.decorators'
 import './topics/14.optional-chaining'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
