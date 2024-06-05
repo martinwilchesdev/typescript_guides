@@ -1,8 +1,4 @@
-/*
-    ===== Código de TypeScript =====
-*/
-
-// Cuando una interfaz tiene un objeto interno, es recomendable que este objeto interno tambien tenga su propia interfaz
+// Cuando una interfaz tiene un objeto como propiedad, es recomendable que dicho objeto tambien tenga su propia interfaz
 interface Address {
     street: string
     country: string
@@ -12,7 +8,7 @@ interface Address {
 interface SuperHero {
     name: string
     age: number
-    address: Address
+    address: Address // La propiedad address es de tipo `Adress`
     showAddress: () => string
 }
 
@@ -32,4 +28,4 @@ const superHeroe: SuperHero = {
 const address = superHeroe.showAddress()
 console.log({ address })
 
-export {}
+export { }

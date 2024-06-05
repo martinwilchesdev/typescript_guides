@@ -1,29 +1,32 @@
-// Cada vez que no se le indica el tipo de dato a una variable y TypeScript no lo puede inferir, es necesario indicar de forma explicita que es de tipo any
-function test(a: any, b: any): void {} // void se indica cuando no hay explicitamente un return en una funcion
+// Si TypeScript no puede inferir el tipo de dato de una variable, es necesario indicar de forma explicita que es de tipo any
+function test(a: any, b: any): void { } // void se indica cuando no hay explicitamente un return en una funcion
 
+// Si una funcion retorna un valor, se debe especificar de forma explicita el tipo de valor retornado
 function addNumbers(a: number, b: number): number {
     return a + b
 }
 
+// Funcion de tipo flecha asignada a una variable
 const addNumbersArrow = (a: number, b: number): string => `${a + b}`
 
-// Los parametros opcionales de una funcion se definen añadiendo al final del nombre del parametro un ?
-// Los parametros de la funcion tambien pueden tener parametros por defectp, eg, parameter: type = value
+/**
+ * Los parametros opcionales de una funcion se definen añadiendo al final del nombre del parametro un "?".
+ * Los parametros de la funcion pueden tener valores por defecto, eg, parameter: type = value.
+ * 
+*/
 function multiply(firstNumber: number, secondNumber?: number, base: number = 2) {
     return firstNumber * base
 }
 
-const result: number = addNumbers(1, 2)
-const result2: string = addNumbersArrow(1, 2)
-const multiplyResult: number = multiply(result, 5)
+const result: number = addNumbers(1, 3)
+const result2: string = addNumbersArrow(5, 6)
+const multiplyResult: number = multiply(3, 4)
 
 console.log({ result, result2, multiplyResult })
 
 /**
  * Funciones con objetos como argumentos
  */
-
-// La interface define el tipo de cada una de las propiedades que componen al objeto literal
 interface Character {
     name: string
     hp: number
@@ -31,9 +34,8 @@ interface Character {
 }
 
 /*
-    El primer parametro de la funcion es un objeto
-
-    Este objeto ha sido definido mediante una interfaz, por lo cual la funcion evaluara que el objeto recibido como argumento cumpla con la estructura de la interface Character
+    El primer parametro que recibe la funcion es un objeto de tipo Character.
+    La funcion evalua que el objeto recibido como argumento cumpla con la estructura de la interfaz Character.
 */
 const healCharacter = (character: Character, amount: number) => {
     if (character.hp === 100) return
@@ -41,9 +43,8 @@ const healCharacter = (character: Character, amount: number) => {
 }
 
 /*
-    strider es un objeto literal que es definido a traves de la interface Character
-
-    Este objeto debe tener las mismas propiedades definidas en la interfaz, y cada propiedad debe ser del tipo de dato especificado
+    strider es un objeto literal que es definido a traves de la interface Character.
+    Este objeto debe tener las mismas propiedades definidas en la interfaz y cada propiedad debe ser del tipo de dato especificado en la misma.
 */
 const strider: Character = {
     name: 'Aragorn',
@@ -56,4 +57,4 @@ const strider: Character = {
 healCharacter(strider, 30)
 strider.showHp()
 
-export {}
+export { }

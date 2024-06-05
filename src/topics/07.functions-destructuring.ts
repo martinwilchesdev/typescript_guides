@@ -1,6 +1,6 @@
 export interface Product {
-    description: string;
-    price: number;
+    description: string
+    price: number
 }
 
 const phone: Product = {
@@ -22,12 +22,15 @@ interface TaxCalculationsOptions {
 export function taxCalculation(options: TaxCalculationsOptions): [number, number] {
     let total = 0
 
-    // Los parametros recibidos por la funcion pueden ser destructurados desde los mismos parametros o dentro del cuerpo de la funcion
-    // Si el objeto que recibe como parametro la funcion contiene muchas propiedades, es recomendable realizar la destructuracion desde el cuerpo de la funcion
-    const {products, tax} = options
+    /**
+     * Cuando la funcion recibe un objeto como parametro, sus propiedades pueden ser desestructuradas desde la firma de la funcion o desde dentro del cuerpo de la misma.
+     * Si el objeto que recibe como parametro la funcion contiene multiples propiedades, es recomendable realizar la destructuracion desde el cuerpo de la funcion.
+    */
+    const { products, tax } = options
 
-    products.forEach(({price}) => total += price)
+    products.forEach(({ price }) => total += price)
 
+    // La funcion retorna un arreglo de 2 numeros, tal como se especifica en la firma de la misma
     return [total, total * tax]
 }
 
@@ -42,3 +45,5 @@ const [total, totalTax] = taxCalculation({
 
 console.log(`Total: ${total}`)
 console.log(`Tax: ${totalTax}`)
+
+export { }
