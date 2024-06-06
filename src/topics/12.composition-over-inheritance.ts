@@ -7,7 +7,7 @@ class NewHero {
         public age: number,
         public realName: string,
         public person: Person
-    ) {}
+    ) { }
 }
 
 const tony = new Person('Tony Stark', 'New York')

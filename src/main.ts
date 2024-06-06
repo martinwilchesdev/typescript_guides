@@ -8,10 +8,10 @@
 // import './topics/08.modules'
 // import './topics/09.classes'
 // import './topics/10.constructor'
-import './topics/11.extend-classes'
+// import './topics/11.extend-classes'
 // import './topics/12.composition-over-inheritance'
 // import './topics/13.generics'
-// import './topics/14.optional-chaining'
+import './topics/14.optional-chaining'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   TypeScript
